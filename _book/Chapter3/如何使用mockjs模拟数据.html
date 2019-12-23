@@ -1,0 +1,536 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第3节：如何使用mockjs模拟数据 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Chapter4/" />
+    
+    
+    <link rel="prev" href="使用vue-cli构建项目.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Chapter1/">
+            
+                <a href="../Chapter1/">
+            
+                    
+                    第一章：基础篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter1/使用前准备.html">
+            
+                <a href="../Chapter1/使用前准备.html">
+            
+                    
+                    第1节：使用前准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter1/路由和侧边栏.html">
+            
+                <a href="../Chapter1/路由和侧边栏.html">
+            
+                    
+                    第2节：路由和侧边栏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Chapter1/vuex的使用.html">
+            
+                <a href="../Chapter1/vuex的使用.html">
+            
+                    
+                    第3节：vuex的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Chapter2/">
+            
+                <a href="../Chapter2/">
+            
+                    
+                    第二章：学习过程中遇到的知识点记录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/reduce方法.html">
+            
+                <a href="../Chapter2/reduce方法.html">
+            
+                    
+                    第1节：reduce方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/key方法.html">
+            
+                <a href="../Chapter2/key方法.html">
+            
+                    
+                    第2节：key方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Chapter2/includes方法.html">
+            
+                <a href="../Chapter2/includes方法.html">
+            
+                    
+                    第3节：includes方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Chapter2/some方法.html">
+            
+                <a href="../Chapter2/some方法.html">
+            
+                    
+                    第4节：some方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第三章：使用vue复制学堂在线首页
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="构建项目前的准备.html">
+            
+                <a href="构建项目前的准备.html">
+            
+                    
+                    第1节：构建项目前的准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="使用vue-cli构建项目.html">
+            
+                <a href="使用vue-cli构建项目.html">
+            
+                    
+                    第2节：使用vue-cli构建项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="如何使用mockjs模拟数据.html">
+            
+                <a href="如何使用mockjs模拟数据.html">
+            
+                    
+                    第3节：如何使用mockjs模拟数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Chapter4/">
+            
+                <a href="../Chapter4/">
+            
+                    
+                    第四章
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第3节：如何使用mockjs模拟数据</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;3&#x8282;&#xFF1A;&#x5982;&#x4F55;&#x4F7F;&#x7528;mockjs&#x6A21;&#x62DF;&#x6570;&#x636E;">&#x7B2C;3&#x8282;&#xFF1A;&#x5982;&#x4F55;&#x4F7F;&#x7528;mockjs&#x6A21;&#x62DF;&#x6570;&#x636E;</h1>
+<p>&#x9996;&#x5148;&#x9700;&#x8981;&#x5148;&#x5B89;&#x88C5;mockjs&#x548C;axios&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;node&#x76F4;&#x63A5;&#x5B89;&#x88C5;</p>
+<pre><code>npm install mockjs --save
+</code></pre><pre><code>npm install axios --save
+</code></pre><p>&#x5B89;&#x88C5;&#x5B8C;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;src&#x76EE;&#x5F55;&#x4E0B;&#x65B0;&#x5EFA;mock.js&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x5355;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5EFA;&#x6587;&#x4EF6;&#x5939;&#x540E;&#x518D;&#x65B0;&#x5EFA;&#xFF0C;&#x770B;&#x4E2A;&#x4EBA;&#x4E60;&#x60EF;&#x3002;</p>
+<p>&#x4E4B;&#x540E;&#x5728;mock.js&#x6587;&#x4EF6;&#x4E2D;&#x952E;&#x5165;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>import { Random as _Random, mock } from &apos;mockjs&apos; // &#x83B7;&#x53D6;mock&#x5BF9;&#x8C61;
+const Random = _Random // &#x83B7;&#x53D6;random&#x5BF9;&#x8C61;&#xFF0C;&#x968F;&#x673A;&#x751F;&#x6210;&#x5404;&#x79CD;&#x6570;&#x636E;&#xFF0C;&#x5177;&#x4F53;&#x8BF7;&#x7FFB;&#x9605;&#x6587;&#x6863;
+const domain = &apos;http://mockjs.com/api&apos; // &#x5B9A;&#x4E49;&#x9ED8;&#x8BA4;&#x57DF;&#x540D;&#xFF0C;&#x968F;&#x4FBF;&#x5199;
+const code = 200 // &#x8FD4;&#x56DE;&#x7684;&#x72B6;&#x6001;&#x7801;
+
+// &#x968F;&#x673A;&#x751F;&#x6210;&#x6587;&#x7AE0;&#x6570;&#x636E;
+const postData = req =&gt; {
+  // console.log(req) // &#x8BF7;&#x6C42;&#x4F53;&#xFF0C;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x53C2;&#x6570;
+
+  //  courserecommendList
+  let courserecommendList = [] // &#x7528;&#x4E8E;&#x5B58;&#x653E;&#x8BFE;&#x7A0B;&#x6570;&#x636E;&#x7684;&#x6570;&#x7EC4;
+  let courserecommendTabList = []
+
+  for (let i = 0; i &lt; 7; i++) {
+    let post = {
+      title: Random.csentence(8, 16),
+      img: Random.dataImage(&apos;375x208&apos;, &apos;&#x8BFE;&#x7A0B;&#x5C01;&#x9762;&apos;),
+      schoolico: Random.dataImage(&apos;100x100&apos;, &apos;&#x5B66;&#x6821;logo&apos;),
+      schoolname: Random.cname(),
+      visits: Random.natural(10000, 10000000),
+      desc: Random.csentence(10, 25),
+      courseUrl: Random.url()
+    }
+
+    courserecommendList.push(post)
+  }
+  for (let j = 0; j &lt; 7; j++) {
+    let post = {
+      title: Random.csentence(12, 20),
+      img: Random.dataImage(&apos;375x208&apos;, &apos;&#x8BFE;&#x7A0B;&#x5C01;&#x9762;&apos;),
+      schoolico: Random.dataImage(&apos;100x100&apos;, &apos;&#x5B66;&#x6821;logo&apos;),
+      schoolname: Random.cname(),
+      visits: Random.natural(10000, 10000000),
+      desc: Random.sentence(10, 25),
+      courseUrl: Random.url()
+    }
+
+    courserecommendTabList.push(post)
+  }
+
+  // &#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x7801;&#x548C;&#x6587;&#x7AE0;&#x6570;&#x636E;posts
+  return {
+    code,
+    courserecommendList,
+    courserecommendTabList
+  }
+}
+
+// &#x5B9A;&#x4E49;&#x8BF7;&#x6C42;&#x94FE;&#x63A5;&#xFF0C;&#x7C7B;&#x578B;&#xFF0C;&#x8FD8;&#x6709;&#x8FD4;&#x56DE;&#x6570;&#x636E;
+mock(`${domain}/gets/course`, &apos;get&apos;, postData)
+
+//  post data
+let mycourse = [] // &#x7528;&#x4E8E;&#x5B58;&#x653E;&#x6587;&#x7AE0;&#x6570;&#x636E;&#x7684;&#x6570;&#x7EC4;
+
+for (let i = 0; i &lt; 10; i++) {
+  let post = {
+    title: Random.csentence(10, 25), // &#x968F;&#x673A;&#x751F;&#x6210;&#x957F;&#x5EA6;&#x4E3A;10-25&#x7684;&#x6807;&#x9898;
+    icon: Random.dataImage(&apos;300x250&apos;, &apos;&#x8BFE;&#x7A0B;&#x5C01;&#x9762;&apos;), // &#x968F;&#x673A;&#x751F;&#x6210;&#x5927;&#x5C0F;&#x4E3A;250x250&#x7684;&#x56FE;&#x7247;&#x94FE;&#x63A5;
+    author: Random.cname(), // &#x968F;&#x673A;&#x751F;&#x6210;&#x540D;&#x5B57;
+    date: Random.date() + &apos; &apos; + Random.time(), // &#x968F;&#x673A;&#x751F;&#x6210;&#x5E74;&#x6708;&#x65E5; + &#x65F6;&#x95F4;
+    courseid: Random.natural(10000, 10000000), // &#x968F;&#x673A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x8BFE;&#x7A0B;&#x7F16;&#x53F7;&#xFF0C;&#x957F;&#x5EA6;&#x5728;5&#x4F4D;&#x6570;&#x5230;9&#x4F4D;&#x6570;&#x4E4B;&#x95F4;
+    courseUrl: Random.url()
+  }
+
+  mycourse.push(post)
+}
+let allcourse = [] // &#x7528;&#x4E8E;&#x5B58;&#x653E;&#x6587;&#x7AE0;&#x6570;&#x636E;&#x7684;&#x6570;&#x7EC4;
+
+for (let i = 0; i &lt; 10; i++) {
+  let post = {
+    title: Random.csentence(10, 25), // &#x968F;&#x673A;&#x751F;&#x6210;&#x957F;&#x5EA6;&#x4E3A;10-25&#x7684;&#x6807;&#x9898;
+    icon: Random.dataImage(&apos;300x250&apos;, &apos;&#x8BFE;&#x7A0B;&#x5C01;&#x9762;&apos;), // &#x968F;&#x673A;&#x751F;&#x6210;&#x5927;&#x5C0F;&#x4E3A;250x250&#x7684;&#x56FE;&#x7247;&#x94FE;&#x63A5;
+    author: Random.cname(), // &#x968F;&#x673A;&#x751F;&#x6210;&#x540D;&#x5B57;
+    date: Random.date() + &apos; &apos; + Random.time(), // &#x968F;&#x673A;&#x751F;&#x6210;&#x5E74;&#x6708;&#x65E5; + &#x65F6;&#x95F4;
+    courseid: Random.natural(10000, 10000000), // &#x968F;&#x673A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x8BFE;&#x7A0B;&#x7F16;&#x53F7;&#xFF0C;&#x957F;&#x5EA6;&#x5728;5&#x4F4D;&#x6570;&#x5230;9&#x4F4D;&#x6570;&#x4E4B;&#x95F4;
+    courseUrl: Random.url()
+  }
+
+  allcourse.push(post)
+}
+mock(`${domain}/posts/search`, &apos;post&apos;, {// &#x8FD9;&#x91CC;&#x7684;url&#x5730;&#x5740;&#x5176;&#x5B9E;&#x53EF;&#x4EE5;&#x6362;&#x6210;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;&#x6BD4;&#x5982;msg,&#x4E0B;&#x8FB9;&#x8BF7;&#x6C42;&#x65F6;&#x5019;&#x5BF9;&#x5E94;&#x5C31;&#x53EF;&#x4EE5;
+  mycourse,
+  allcourse
+})
+</code></pre><p>&#x4E0A;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x5927;&#x6982;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x8FD9;&#x662F;&#x6211;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x65B0;&#x5EFA;&#x7684;mock&#x6570;&#x636E;&#xFF0C;&#x7136;&#x540E;&#x5728;main.js&#x4E2D;&#x5F15;&#x5165;&#xFF1A;</p>
+<pre><code>import mock from &apos;./mock/mock&apos; // &#x521A;&#x521A;&#x624B;&#x5199;&#x7684;mock.js&#x6587;&#x4EF6;
+import axios from &apos;axios&apos; // axios http&#x8BF7;&#x6C42;&#x5E93;
+
+axios.defaults.baseURL = &apos;http://mockjs.com/api&apos; // &#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x8BF7;&#x6C42;&#x7684;url
+Vue.prototype.$http = axios
+</code></pre><p>&#x6700;&#x540E;&#xFF0C;&#x5C31;&#x662F;&#x5728;&#x5177;&#x4F53;&#x7684;vue&#x6587;&#x4EF6;&#x4E2D;&#x8C03;&#x7528;&#x4E86;&#xFF0C;&#x76F4;&#x63A5;&#x5199;&#x5728;mounted&#x65B9;&#x6CD5;&#x4E2D;&#xFF1A;</p>
+<pre><code>this.$http.get(&apos;/gets/course&apos;).then(res =&gt; {
+      this.courserecommendList = res.data.courserecommendList
+      this.courserecommendTabList = res.data.courserecommendTabList
+    })
+</code></pre><p>mock&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x4E0B;&#x9762;&#x662F;mock&#x7684;&#x6587;&#x6863;&#x4ECB;&#x7ECD;&#xFF0C;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x65F6;&#x53EF;&#x4EE5;&#x67E5;&#x9605;&#xFF1A;</p>
+<p>[<a href="https://github.com/nuysoft/Mock/wiki/" target="_blank">https://github.com/nuysoft/Mock/wiki/</a>]</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="使用vue-cli构建项目.html" class="navigation navigation-prev " aria-label="Previous page: 第2节：使用vue-cli构建项目">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Chapter4/" class="navigation navigation-next " aria-label="Next page: 第四章">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第3节：如何使用mockjs模拟数据","level":"1.4.3","depth":2,"next":{"title":"第四章","level":"1.5","depth":1,"path":"Chapter4/README.md","ref":"Chapter4/README.md","articles":[]},"previous":{"title":"第2节：使用vue-cli构建项目","level":"1.4.2","depth":2,"path":"Chapter3/使用vue-cli构建项目.md","ref":"Chapter3/使用vue-cli构建项目.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter3/如何使用mockjs模拟数据.md","mtime":"2019-12-20T07:40:06.954Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-20T07:53:46.940Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
