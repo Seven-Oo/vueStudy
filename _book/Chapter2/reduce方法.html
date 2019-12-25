@@ -348,7 +348,107 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x7B2C;1&#x8282;&#xFF1A;reduce&#x65B9;&#x6CD5;">&#x7B2C;1&#x8282;&#xFF1A;reduce&#x65B9;&#x6CD5;</h1>
+<p>reduce()&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x7D2F;&#x52A0;&#x5668;&#xFF0C;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x503C;&#xFF08;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#xFF09;&#x5F00;&#x59CB;&#x7F29;&#x51CF;&#xFF0C;&#x6700;&#x7EC8;&#x8BA1;&#x7B97;&#x4E3A;&#x4E00;&#x4E2A;&#x503C;&#x3002;</p>
+<p>array.reduce(function(total, currentValue, currentIndex, arr), initialValue)</p>
+<p>total&#xFF1A; &#x5FC5;&#x987B;&#x3002;&#x4E0A;&#x4E00;&#x6B21;&#x8C03;&#x7528;&#x56DE;&#x8C03;&#x8FD4;&#x56DE;&#x7684;&#x503C;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x63D0;&#x4F9B;&#x7684;&#x521D;&#x59CB;&#x503C;&#xFF08;initialValue&#xFF09;</p>
+<p>currentValue&#xFF1A; &#x5FC5;&#x987B;&#x3002;&#x5F53;&#x524D;&#x5143;&#x7D20;</p>
+<p>currentIndex&#xFF1A; &#x53EF;&#x9009;&#x3002;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x7684;&#x7D22;&#x5F15;</p>
+<p>arr&#xFF1A; &#x53EF;&#x9009;&#x3002;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x6240;&#x5C5E;&#x7684;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;</p>
+<p>initialValue&#xFF1A; &#x53EF;&#x9009;&#x3002;&#x4F20;&#x9012;&#x7ED9;&#x51FD;&#x6570;&#x7684;&#x521D;&#x59CB;&#x503C; / &#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x6B21;&#x8C03;&#x7528; callback &#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;</p>
+<pre><code>var arr = [1, 2, 3, 4];
+var sum = arr.reduce(function(prev, cur, index, arr){
+    console.log(prev, cur, index);
+    return prev + cur;
+})
+console.log(arr, sum);
+</code></pre><pre><code>&#x6253;&#x5370;&#x7ED3;&#x679C;&#xFF1A;
+1 2 1 
+3 3 2 
+6 4 3
 
+[1, 2, 3, 4] 10
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x7684;index&#x662F;&#x4ECE;1&#x5F00;&#x59CB;&#x7684;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x7684;prev&#x7684;&#x503C;&#x662F;&#x6570;&#x7EC4;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#x662F;4&#xFF0C;&#x4F46;&#x662F;reduce&#x51FD;&#x6570;&#x5374;&#x53EA;&#x5FAA;&#x73AF;3&#x624D;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x4F20;&#x5165;&#x521D;&#x59CB;&#x503C;&#xFF08;initialValue&#xFF09;&#x5BFC;&#x81F4;&#x7684;&#x3002;</p>
+<p>&#x518D;&#x770B;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code>var arr = [1, 2, 3, 4];
+var sum = arr.reduce(function(prev, cur, index, arr){
+    console.log(prev, cur, index);
+    return prev + cur;
+}&#xFF0C; 0) //&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x4E86;&#x521D;&#x59CB;&#x503C;
+console.log(arr, sum);
+</code></pre><pre><code>&#x6253;&#x5370;&#x7ED3;&#x679C;&#xFF1A;
+0 1 0
+1 2 1 
+3 3 2 
+6 4 3
+
+[1, 2, 3, 4] 10
+</code></pre><blockquote>
+<p><strong>PS&#xFF1A;**</strong>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;initiaValue&#xFF0C;reduce&#x4F1A;&#x4ECE;&#x7D22;&#x5F15;&#x4E3A;1&#x7684;&#x5730;&#x65B9;&#x5F00;&#x59CB;&#x6267;&#x884C;callback&#x65B9;&#x6CD5;&#xFF0C;&#x8DF3;&#x8FC7;&#x7B2C;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#x3002;&#x5982;&#x679C;&#x63D0;&#x4F9B;&#x4E86;initiaValue&#xFF0C;&#x5219;&#x4ECE;&#x7D22;&#x5F15;&#x4E3A;0&#x7684;&#x5730;&#x65B9;&#x5F00;&#x59CB;&#x3002;**</p>
+</blockquote>
+<p><strong>&#x4E3A;&#x4E86;&#x4E0D;&#x62A5;&#x9519;&#xFF0C;&#x8FD8;&#x662F;&#x63D0;&#x4F9B;&#x521D;&#x59CB;&#x503C;&#x4F1A;&#x66F4;&#x5B89;&#x5168;&#xFF0C;&#x56E0;&#x4E3A;&#x539F;&#x59CB;&#x6570;&#x7EC4;&#x4E3A;&#x7A7A;&#x5E76;&#x6CA1;&#x6709;&#x521D;&#x59CB;&#x503C;&#x65F6;&#xFF0C;reduce&#x65B9;&#x6CD5;&#x4F1A;&#x62A5;&#x9519;</strong></p>
+<h4 id="&#x7B80;&#x5355;&#x7528;&#x6CD5;&#xFF1A;">&#x7B80;&#x5355;&#x7528;&#x6CD5;&#xFF1A;</h4>
+<p>&#x6C42;&#x548C;&#x3001;&#x6C42;&#x4E58;&#x79EF;</p>
+<pre><code>var arr = [1, 2, 3, 4];
+var sum = arr.reduce((x, y) =&gt; x + y)
+var mul = arr.reduce((x, y) =&gt; x * y)
+console.log( sum ); // 10
+console.log ( mul ); // 24
+</code></pre><h4 id="&#x9AD8;&#x7EA7;&#x7528;&#x6CD5;&#xFF1A;">&#x9AD8;&#x7EA7;&#x7528;&#x6CD5;&#xFF1A;</h4>
+<p>1.&#x8BA1;&#x7B97;&#x6570;&#x7EC4;&#x4E2D;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x51FA;&#x73B0;&#x6B21;&#x6570;</p>
+<pre><code>let names = [&apos;Alice&apos;, &apos;Bob&apos;, &apos;Tiff&apos;, &apos;Bruce&apos;, &apos;Alice&apos;];
+
+let nameNum = names.reduce((pre,cur)=&gt;{
+  if(cur in pre){
+    pre[cur]++
+  }else{
+    pre[cur] = 1 
+  }
+  return pre
+},{})
+console.log(nameNum); //{Alice: 2, Bob: 1, Tiff: 1, Bruce: 1}
+</code></pre><p>2.&#x6570;&#x7EC4;&#x53BB;&#x91CD;</p>
+<pre><code>let arr = [1,2,3,4,4,1]
+let newArr = arr.reduce((pre,cur)=&gt;{
+    if(!pre.includes(cur)){
+      return pre.concat(cur)
+    }else{
+      return pre
+    }
+},[])
+console.log(newArr);// [1, 2, 3, 4]
+</code></pre><p>3.&#x5C06;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#x8F6C;&#x5316;&#x4E3A;&#x4E00;&#x7EF4;</p>
+<pre><code>let arr = [[0, 1], [2, 3], [4, 5]]
+let newArr = arr.reduce((pre,cur)=&gt;{
+    return pre.concat(cur)
+},[])
+console.log(newArr); // [0, 1, 2, 3, 4, 5]
+</code></pre><p>4.&#x5C06;&#x591A;&#x7EF4;&#x6570;&#x7EC4;&#x8F6C;&#x5316;&#x4E3A;&#x4E00;&#x7EF4;</p>
+<pre><code>let arr = [[0, 1], [2, 3], [4,[5,6,7]]]
+const newArr = function(arr){
+   return arr.reduce((pre,cur)=&gt;pre.concat(Array.isArray(cur)?newArr(cur):cur),[])
+}
+console.log(newArr(arr)); //[0, 1, 2, 3, 4, 5, 6, 7]
+</code></pre><p>5.&#x5BF9;&#x8C61;&#x91CC;&#x7684;&#x5C5E;&#x6027;&#x6C42;&#x548C;</p>
+<pre><code>var result = [
+    {
+        subject: &apos;math&apos;,
+        score: 10
+    },
+    {
+        subject: &apos;chinese&apos;,
+        score: 20
+    },
+    {
+        subject: &apos;english&apos;,
+        score: 30
+    }
+];
+
+var sum = result.reduce(function(prev, cur) {
+    return cur.score + prev;
+}, 0);
+console.log(sum) //60
+</code></pre>
                                 
                                 </section>
                             
@@ -391,7 +491,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第1节：reduce方法","level":"1.3.1","depth":2,"next":{"title":"第2节：key方法","level":"1.3.2","depth":2,"path":"Chapter2/key方法.md","ref":"Chapter2/key方法.md","articles":[]},"previous":{"title":"第二章：学习过程中遇到的知识点记录","level":"1.3","depth":1,"path":"Chapter2/README.md","ref":"Chapter2/README.md","articles":[{"title":"第1节：reduce方法","level":"1.3.1","depth":2,"path":"Chapter2/reduce方法.md","ref":"Chapter2/reduce方法.md","articles":[]},{"title":"第2节：key方法","level":"1.3.2","depth":2,"path":"Chapter2/key方法.md","ref":"Chapter2/key方法.md","articles":[]},{"title":"第3节：includes方法","level":"1.3.3","depth":2,"path":"Chapter2/includes方法.md","ref":"Chapter2/includes方法.md","articles":[]},{"title":"第4节：some方法","level":"1.3.4","depth":2,"path":"Chapter2/some方法.md","ref":"Chapter2/some方法.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter2/reduce方法.md","mtime":"2019-12-18T06:45:25.893Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-20T07:53:46.940Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第1节：reduce方法","level":"1.3.1","depth":2,"next":{"title":"第2节：key方法","level":"1.3.2","depth":2,"path":"Chapter2/key方法.md","ref":"Chapter2/key方法.md","articles":[]},"previous":{"title":"第二章：学习过程中遇到的知识点记录","level":"1.3","depth":1,"path":"Chapter2/README.md","ref":"Chapter2/README.md","articles":[{"title":"第1节：reduce方法","level":"1.3.1","depth":2,"path":"Chapter2/reduce方法.md","ref":"Chapter2/reduce方法.md","articles":[]},{"title":"第2节：key方法","level":"1.3.2","depth":2,"path":"Chapter2/key方法.md","ref":"Chapter2/key方法.md","articles":[]},{"title":"第3节：includes方法","level":"1.3.3","depth":2,"path":"Chapter2/includes方法.md","ref":"Chapter2/includes方法.md","articles":[]},{"title":"第4节：some方法","level":"1.3.4","depth":2,"path":"Chapter2/some方法.md","ref":"Chapter2/some方法.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter2/reduce方法.md","mtime":"2019-12-25T08:34:20.149Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-25T09:08:11.617Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
