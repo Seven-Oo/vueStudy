@@ -14,5 +14,4 @@
     * [第1节：构建项目前的准备](Chapter3/构建项目前的准备.md)
     * [第2节：使用vue-cli构建项目](Chapter3/使用vue-cli构建项目.md)
     * [第3节：如何使用mockjs模拟数据](Chapter3/如何使用mockjs模拟数据.md)
-* [第四章](Chapter4/README.md)
 
